@@ -1,6 +1,5 @@
 import streamlit as st
 import replicate
-import os
 
 st.set_page_config(page_title="Procrastinte-An effortless scholar")
 
@@ -15,7 +14,7 @@ with st.sidebar:
             st.warning('Please enter your credentials!', icon='⚠️')
         else:
             st.success('Proceed to entering your prompt message!', icon='👉')
-os.environ['REPLICATE_API_TOKEN'] = replicate_api
+r8_LojLqdq1kQ1bE04VinUHeUyqOlXnoz423W7hp = replicate_api
 
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [{"role": "assistant", "content": "How may I assist you today?"}]
