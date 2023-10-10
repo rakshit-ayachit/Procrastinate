@@ -10,11 +10,12 @@ with st.sidebar:
         replicate_api = st.secrets['REPLICATE_API_TOKEN']
     else:
         replicate_api = st.text_input('Enter Replicate API token:', type='password')
-        if not (replicate_api.startswith('r8_') and len(replicate_api)==40):
+        if not (replicate_api.startswith('r8_') and len(replicate_api) == 40):
             st.warning('Please enter your credentials!', icon='⚠️')
         else:
             st.success('Proceed to entering your prompt message!', icon='👉')
-r8_LojLqdq1kQ1bE04VinUHeUyqOlXnoz423W7hp = replicate_api
+            # Store the API token as a secret
+            st.secrets['REPLICATE_API_TOKEN'] = replicate_api
 
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [{"role": "assistant", "content": "How may I assist you today?"}]
