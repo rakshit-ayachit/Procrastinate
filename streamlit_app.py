@@ -15,7 +15,7 @@ with st.sidebar:
         else:
             st.success('Proceed to entering your prompt message!', icon='👉')
             # Store the API token as a secret
-            st.secrets['REPLICATE_API_TOKEN'] = replicate_api
+st.secrets['REPLICATE_API_TOKEN'] = replicate_api
 
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [{"role": "assistant", "content": "How may I assist you today?"}]
