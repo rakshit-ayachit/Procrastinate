@@ -3,6 +3,8 @@ import replicate
 
 st.set_page_config(page_title="Procrastinte-An effortless scholar")
 
+st.title("Procrastinate - An Effortless Scholar", anchor='center')
+
 with st.sidebar:
     st.title('Procrastinte-An effortless scholar')
     if 'REPLICATE_API_TOKEN' in st.secrets:
