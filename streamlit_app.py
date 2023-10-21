@@ -1,12 +1,24 @@
 import streamlit as st
 import replicate
-
 st.set_page_config(page_title="Procrastinte-An effortless scholar")
 
-st.title("Procrastinate - An Effortless Scholar", anchor='center')
+st.markdown(
+    """
+    <style>
+        {% include 'custom.css' %}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+# Check if the REPLICATE_API_TOKEN secret exists
+if 'REPLICATE_API_TOKEN' in st.secrets:
+    replicate_api = st.secrets['REPLICATE_API_TOKEN']
+else:
+    replicate_api = None
+
 
 with st.sidebar:
-    st.title('Procrastinte-An effortless scholar')
+    # st.title('Procrastinte-An effortless scholar')
     if 'REPLICATE_API_TOKEN' in st.secrets:
         st.success('API key already provided!', icon='✅')
         replicate_api = st.secrets['REPLICATE_API_TOKEN']
@@ -17,7 +29,7 @@ with st.sidebar:
         else:
             st.success('Proceed to entering your prompt message!', icon='👉')
             # Store the API token as a secret
-st.secrets['REPLICATE_API_TOKEN'] = replicate_api
+        st.secrets['REPLICATE_API_TOKEN'] = replicate_api
 
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [{"role": "assistant", "content": "How may I assist you today?"}]
