@@ -1,4 +1,4 @@
-# Procrastinte Chatbot
+# Procrastinate Chatbot
 
 This is a Streamlit-based chatbot application for the Procrastinte app, designed to provide assistance and engage in dialogue with users using the REPLICATE language model.
 
